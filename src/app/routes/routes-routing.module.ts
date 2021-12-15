@@ -30,6 +30,7 @@ const routes: Routes = [
         component: HomePageComponent,
         data: { title: '首页', titleI18n: 'dashboard' },
         children: [
+          { path: '', redirectTo: 'articles', pathMatch: 'full' },
           {
             path: 'articles',
             component: ProAccountCenterArticlesComponent,

@@ -17,10 +17,12 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 import { LayoutBasicComponent } from './basic/basic.component';
 import { HeaderClearStorageComponent } from './basic/widgets/clear-storage.component';
+import { FooterComponent } from './basic/widgets/footer.component';
 import { HeaderFullScreenComponent } from './basic/widgets/fullscreen.component';
 // import { HeaderI18nComponent } from './basic/widgets/i18n.component';
 import { HeaderIconComponent } from './basic/widgets/icon.component';
@@ -42,7 +44,8 @@ const HEADERCOMPONENTS = [
   // HeaderI18nComponent,
   HeaderClearStorageComponent,
   HeaderUserComponent,
-  HeaderRTLComponent
+  HeaderRTLComponent,
+  FooterComponent
 ];
 
 // passport
@@ -69,7 +72,8 @@ const PASSPORT = [LayoutPassportComponent];
     NzBadgeModule,
     NzAvatarModule,
     NzIconModule,
-    NzCardModule
+    NzCardModule,
+    NzLayoutModule
   ],
   declarations: [...COMPONENTS, ...HEADERCOMPONENTS, ...PASSPORT],
   exports: [...COMPONENTS, ...PASSPORT]
