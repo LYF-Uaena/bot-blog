@@ -1,6 +1,6 @@
 <div nz-row nzGutter="24" class="py-lg">
-  <div nz-col nzMd="24" nzLg="2"> </div>
-  <div nz-col nzMd="24" nzLg="5">
+  <div nz-col nzXs="2" nzSm="2" nzXl="2" nzMd="2" nzLg="2"> </div>
+  <div nz-col nzXs="5" nzSm="5" nzXl="5" nzMd="5" nzLg="5">
     <nz-card [nzBordered]="false" class="mb-lg" [nzLoading]="!user">
       <ng-container *ngIf="user">
         <div class="avatarHolder">
@@ -55,15 +55,15 @@
       </ng-container>
     </nz-card>
   </div>
-  <div nz-col nzMd="24" nzLg="16">
-    <nz-card class="tabsCard" [nzBordered]="false" [nzTitle]="tagTitleTpl">
-      <ng-template #tagTitleTpl>
+  <div nz-col nzXs="16" nzSm="16" nzXl="16" nzMd="16" nzLg="16">
+    <nz-card [nzBordered]="false" nzTitle="最新发布">
+      <!-- <ng-template #tagTitleTpl>
         <nz-tabset nzSize="large" [nzSelectedIndex]="pos">
           <nz-tab *ngFor="let i of tabs" [nzTitle]="i.tab" (nzClick)="to(i)"></nz-tab>
         </nz-tabset>
-      </ng-template>
+      </ng-template> -->
       <router-outlet></router-outlet>
     </nz-card>
   </div>
-  <div nz-col nzMd="24" nzLg="1"> </div>
+  <div nz-col nzXs="1" nzSm="1" nzXl="1" nzMd="1" nzLg="1"> </div>
 </div>

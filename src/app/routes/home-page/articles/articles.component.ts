@@ -8,10 +8,18 @@ import { _HttpClient } from '@delon/theme';
 })
 export class ProAccountCenterArticlesComponent {
   list!: any[];
+  page: number = 0;
+  total: number = 0;
+  size: number = 0;
 
   constructor(private http: _HttpClient, private cdr: ChangeDetectorRef) {
     this.http.get('/api/list', { count: 8 }).subscribe(res => {
-      this.list = res;
+      console.log(res);
+
+      this.page = res.page;
+      this.size = res.size;
+      this.list = res.content;
+      this.total = res.total;
       this.cdr.detectChanges();
     });
   }

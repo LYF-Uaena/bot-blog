@@ -32,11 +32,14 @@ const user = ['卡色', 'cipchk', '付小小', '曲丽丽', '林东东', '周星
 
 // endregion
 
-function getFakeList(count: number = 20): any[] {
+function getFakeList(count: number = 5): any {
   const list: any[] = [];
   for (let i = 0; i < count; i += 1) {
     list.push({
       id: `fake-list-${i}`,
+      img: 'https://img.alicdn.com/tfs/TB1g.mWZAL0gK0jSZFtXXXQCXXa-200-200.svg',
+      placeholder:
+        'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200',
       owner: user[i % 10],
       title: titles[i % 8],
       avatar: avatars[i % 8],
@@ -74,7 +77,13 @@ function getFakeList(count: number = 20): any[] {
     });
   }
 
-  return list;
+  let rst = {
+    content: list,
+    page: 0,
+    total: 10,
+    size: 5
+  };
+  return rst;
 }
 
 function getNotice(): any[] {

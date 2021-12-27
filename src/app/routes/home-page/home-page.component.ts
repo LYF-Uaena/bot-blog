@@ -34,15 +34,15 @@ export class HomePageComponent implements OnDestroy, OnInit {
   taging = false;
   tagValue = '';
 
-  private setActive(): void {
-    const key = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
-    console.log(key);
+  // private setActive(): void {
+  //   const key = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+  //   console.log(key);
 
-    const idx = this.tabs.findIndex(w => w.key === key);
-    if (idx !== -1) {
-      this.pos = idx;
-    }
-  }
+  //   const idx = this.tabs.findIndex(w => w.key === key);
+  //   if (idx !== -1) {
+  //     this.pos = idx;
+  //   }
+  // }
 
   ngOnInit(): void {
     zip(this.http.get('/user/current'), this.http.get('/api/notice')).subscribe(([user, notice]) => {
@@ -50,12 +50,12 @@ export class HomePageComponent implements OnDestroy, OnInit {
       this.notice = notice;
       this.cdr.detectChanges();
     });
-    this.router$ = this.router.events.pipe(filter(e => e instanceof ActivationEnd)).subscribe(() => this.setActive());
-    this.setActive();
+    this.router$ = this.router.events.pipe(filter(e => e instanceof ActivationEnd)).subscribe(() => this.to());
+    this.to();
   }
 
-  to(item: { key: string }): void {
-    this.router.navigateByUrl(`/home-page/${item.key}`);
+  to(): void {
+    this.router.navigateByUrl(`/home-page/articles`);
   }
 
   tagShowIpt(): void {
